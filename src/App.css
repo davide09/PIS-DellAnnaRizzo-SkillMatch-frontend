@@ -1,0 +1,8 @@
+
+/* src/App.css */
+
+/* Layout di base; la maggior parte dello styling è con classi Tailwind */
+.app-root {
+  min-height: 100vh;
+  background-color: #f1f5f9; /* slate-100 */
+}
