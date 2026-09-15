@@ -1,5 +1,4 @@
 
-// src/components/ProjectCard.jsx
 
 import { Link } from "react-router-dom";
 

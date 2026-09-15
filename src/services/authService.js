@@ -1,6 +1,6 @@
 
-// src/services/authService.js
 import { buildUrl, API_PATHS } from "../api/gateway";
+import { getAuthToken } from "../utils/auth";
 
 export async function loginRequest(email, password) {
   const res = await fetch(buildUrl(`${API_PATHS.auth}/login`), {
@@ -14,7 +14,7 @@ export async function loginRequest(email, password) {
   try {
     data = await res.json();
   } catch {
-      //se non è JSON, lo leggiamo come testo
+      //se non è JSON lo leggiamo come testo
       try {
         const text = await res.text();
         data = { message: text };
@@ -46,4 +46,18 @@ export async function registerRequest(data) {
   }
 
   return res.json();
+}
+export async function logoutRequest() {
+  const token = getAuthToken();
+
+  const res = await fetch(buildUrl(`${API_PATHS.auth}/logout`), {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+
+  if (!res.ok) {
+    throw new Error("Logout lato server fallito");
+  }
 }

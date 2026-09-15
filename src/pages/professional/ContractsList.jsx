@@ -1,5 +1,4 @@
 
-// src/pages/professional/ContractsList.jsx
 
 import { useEffect, useState } from "react";
 import { listContractsForProfessional } from "../../services/contractService";

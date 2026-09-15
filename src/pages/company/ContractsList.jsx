@@ -1,5 +1,4 @@
 
-// src/pages/company/ContractsList.jsx
 
 import { useEffect, useState } from "react";
 import { listContractsForCompany } from "../../services/contractService";

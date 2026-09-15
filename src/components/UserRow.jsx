@@ -1,5 +1,4 @@
 
-// src/components/admin/UserRow.jsx
 
 export default function UserRow({ u, onApprove, onSuspend, onUnsuspend }) {
 

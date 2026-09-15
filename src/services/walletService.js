@@ -1,10 +1,7 @@
 
-// src/services/walletService.js
 import { apiGet, apiPost, apiDelete } from "../hooks/useApi";
 
-// ======================
-// USER WALLET
-// ======================
+
 
 export async function getMyWallet(userId) {
   return apiGet(`/api/wallet/${userId}`);
@@ -18,9 +15,7 @@ export async function getMyTransactions(userId) {
   return apiGet(`/api/wallet/${userId}/transactions`);
 }
 
-// ======================
-// ADMIN WALLET ACTIONS
-// ======================
+
 
 export async function getAllWallets() {
   return apiGet("/api/admin/wallet");
@@ -46,9 +41,7 @@ export async function adminDeleteWallet(userId) {
   return apiDelete(`/api/admin/wallet/${userId}`);
 }
 
-// ======================
-// ADMIN – FILTRO TRANSAZIONI (MANCANTE)
-// ======================
+
 export async function filterTransactions(filterReq) {
   return apiPost("/api/admin/wallet/transactions/filter", filterReq);
 }

@@ -1,5 +1,4 @@
 
-// src/components/admin/AdminSidebar.jsx
 
 import { NavLink } from "react-router-dom";
 

@@ -1,5 +1,4 @@
 
-// src/components/wallet/TransactionRow.jsx
 
 export default function TransactionRow({ tx }) {
   const color =

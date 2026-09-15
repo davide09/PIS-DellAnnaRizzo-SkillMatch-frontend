@@ -1,5 +1,4 @@
 
-// src/pages/admin/AdminReports.jsx
 
 import { useEffect, useState } from "react";
 import { getAllReports, closeReport } from "../../services/adminReportService";

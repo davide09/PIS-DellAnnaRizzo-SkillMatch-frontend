@@ -1,5 +1,4 @@
 
-// src/interfaces/Skill.js
 
 export class Skill {
   constructor(dto) {

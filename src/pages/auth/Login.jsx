@@ -1,5 +1,4 @@
 
-// src/pages/auth/Login.jsx
 
 import { useState } from "react";
 import { loginRequest } from "../../services/authService";

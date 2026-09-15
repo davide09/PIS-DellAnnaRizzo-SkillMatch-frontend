@@ -1,5 +1,4 @@
 
-// src/pages/company/ProjectDetails.jsx
 
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";

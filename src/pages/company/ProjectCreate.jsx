@@ -1,5 +1,4 @@
 
-// src/pages/company/ProjectCreate.jsx
 
 import { useState } from "react";
 import { useAuth } from "../../hooks/useAuth";
@@ -28,7 +27,7 @@ export default function ProjectCreate() {
     e.preventDefault();
     setError("");
 
-    // VALIDAZIONI 
+    
     if (
       !form.title.trim() &&
       !form.description.trim() &&

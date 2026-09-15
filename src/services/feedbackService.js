@@ -1,5 +1,4 @@
 
-// src/services/feedbackService.js
 
 import { apiGet, apiPost } from "../hooks/useApi";
 import { API_PATHS } from "../api/gateway";

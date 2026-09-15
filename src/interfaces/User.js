@@ -1,5 +1,4 @@
 
-// src/interfaces/User.js
 
 export class User {
   constructor(dto) {

@@ -1,5 +1,4 @@
 
-// src/pages/admin/AdminWalletTransactionsFilter.jsx
 
 import { useState } from "react";
 import { filterTransactions } from "../../services/walletService";
@@ -44,7 +43,7 @@ export default function AdminWalletTransactionsFilter() {
       minAmount: "",
       maxAmount: ""
     });
-    setResults([]); //svuota anche la tabella risultati
+    setResults([]); 
   }
 
   return (

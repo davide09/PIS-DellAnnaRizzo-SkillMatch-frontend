@@ -1,5 +1,4 @@
 
-// src/layouts/MainLayout.jsx
 
 import Navbar from "../components/Navbar";
 

@@ -1,5 +1,4 @@
 
-// src/interfaces/Project.js
 
 export class Project {
   constructor(dto) {

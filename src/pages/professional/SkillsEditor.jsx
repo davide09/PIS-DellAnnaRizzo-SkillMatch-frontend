@@ -1,5 +1,4 @@
 
-// src/pages/professional/SkillsEditor.jsx
 
 import { useEffect, useState } from "react";
 import { useAuth } from "../../hooks/useAuth";

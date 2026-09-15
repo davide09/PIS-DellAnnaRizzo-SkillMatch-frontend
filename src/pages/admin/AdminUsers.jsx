@@ -1,5 +1,4 @@
 
-// src/pages/admin/AdminUsers.jsx
 import { useEffect, useState } from "react";
 import { getAllUsers, suspendUser, unsuspendUser } from "../../services/adminUserService";
 import { Link } from "react-router-dom";

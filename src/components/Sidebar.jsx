@@ -1,5 +1,4 @@
 
-// src/components/Sidebar.jsx
 
 import { NavLink } from "react-router-dom";
 

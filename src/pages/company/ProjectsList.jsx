@@ -1,5 +1,4 @@
 
-// src/pages/company/ProjectsList.jsx
 
 import { useEffect, useState } from "react";
 import { listProjectsByCompany } from "../../services/projectService";

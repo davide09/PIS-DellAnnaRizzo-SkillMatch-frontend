@@ -1,5 +1,4 @@
 
-// src/pages/admin/AdminUsersPending.jsx
 import { useEffect, useState } from "react";
 import { getPendingUsers, approveUser } from "../../services/adminUserService";
 

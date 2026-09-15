@@ -1,5 +1,4 @@
 
-// src/context/AuthContext.jsx
 
 import { createContext, useContext, useEffect, useState } from "react";
 import {
@@ -10,6 +9,7 @@ import {
   getAuthUser,
 } from "../utils/auth";
 import { getCurrentUser } from "../services/userService";
+import { logoutRequest } from "../services/authService";
 
 export const AuthContext = createContext(null);
 
@@ -21,7 +21,6 @@ export function AuthProvider({ children }) {
   const [user, setUser] = useState(initialUser);
   const [loading, setLoading] = useState(true);
 
-  // Inizializzazione: se ho un token, cerco il mio profilo
   useEffect(() => {
     const token = getAuthToken();
     if (!token) {
@@ -32,7 +31,6 @@ export function AuthProvider({ children }) {
     getCurrentUser()
       .then((u) => {
 
-        // se l'utente non è abilitato o è sospeso → lo butto fuori
         if (u.suspended) {
           console.warn("Utente sospeso");
           clearAuth();
@@ -58,16 +56,20 @@ export function AuthProvider({ children }) {
   }, []);
 
   const login = (userPayload, token) => {
-    // userPayload è quello che arriva da /login (AuthResponse)
-    // poi al primo refresh verrà ricaricato /me con enabled/suspended
     saveAuthToken(token);
     saveAuthUser(userPayload);
     setUser(userPayload);
   };
 
-  const logout = () => {
-    clearAuth();
-    setUser(null);
+    const logout = async () => {
+    try {
+      await logoutRequest();
+    } catch (err) {
+      console.warn("Logout lato server fallito, procedo comunque a pulire il client", err);
+    } finally {
+      clearAuth();
+      setUser(null);
+    }
   };
 
   return (

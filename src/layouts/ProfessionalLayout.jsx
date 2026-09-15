@@ -1,5 +1,4 @@
 
-// src/layouts/ProfessionalLayout.jsx
 
 import { Outlet } from "react-router-dom";
 import MainLayout from "./MainLayout";

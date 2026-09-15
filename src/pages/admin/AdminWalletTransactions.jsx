@@ -1,5 +1,4 @@
 
-// src/pages/admin/AdminWalletTransactions.jsx
 
 import { useEffect, useState } from "react";
 import { getAllTransactions } from "../../services/walletService";

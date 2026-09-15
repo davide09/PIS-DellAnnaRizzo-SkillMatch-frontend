@@ -1,5 +1,4 @@
 
-// src/interfaces/Contract.js
 
 export class Contract {
   constructor(dto) {

@@ -1,5 +1,4 @@
 
-// src/services/adminUserService.js
 import { apiGet, apiPost } from "../hooks/useApi";
 
 export async function getAllUsers() {

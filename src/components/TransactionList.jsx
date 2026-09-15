@@ -1,5 +1,4 @@
 
-// src/components/wallet/TransactionList.jsx
 
 import TransactionRow from "./TransactionRow";
 

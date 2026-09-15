@@ -1,5 +1,4 @@
 
-// src/interfaces/MatchEvent.js
 
 export class MatchEvent {
   constructor(dto) {

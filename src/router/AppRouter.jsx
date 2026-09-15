@@ -1,26 +1,20 @@
 
-// src/router/AppRouter.jsx
 
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { useAuth } from "../hooks/useAuth";
 
-// === LAYOUTS ===
 import AuthLayout from "../layouts/AuthLayout";
 import CompanyLayout from "../layouts/CompanyLayout";
 import ProfessionalLayout from "../layouts/ProfessionalLayout";
 import AdminLayout from "../layouts/AdminLayout";
 
-// === PAGINE GLOBALI ===
 import Welcome from "../pages/Welcome";
 
-// === AUTH ===
 import Login from "../pages/auth/Login";
 import Register from "../pages/auth/Register";
 
-// === SEGNALAZIONE/REPORT ===
 import ReportCreate from "../pages/report/ReportCreate";
 
-// === COMPANY ===
 import CompanyDashboard from "../pages/company/CompanyDashboard";
 import ProjectsList from "../pages/company/ProjectsList";
 import ProjectCreate from "../pages/company/ProjectCreate";
@@ -29,7 +23,6 @@ import ContractsListCompany from "../pages/company/ContractsList";
 import CompanyContractDetails from "../pages/company/ContractDetails";
 import CompanyProfile from "../pages/company/Profile";
 
-// === PROFESSIONAL ===
 import ProfessionalDashboard from "../pages/professional/ProfessionalDashboard";
 import MatchingSuggestions from "../pages/professional/MatchingSuggestions";
 import ContractsListProfessional from "../pages/professional/ContractsList";
@@ -37,7 +30,6 @@ import ProfessionalContractDetails from "../pages/professional/ContractDetails";
 import SkillsEditor from "../pages/professional/SkillsEditor";
 import ProfessionalProfile from "../pages/professional/Profile";
 
-// === ADMIN ===
 import AdminDashboard from "../pages/admin/AdminDashboard";
 import AdminUsers from "../pages/admin/AdminUsers";
 import AdminUserFeedback from "../pages/admin/AdminUserFeedback";
@@ -51,11 +43,9 @@ import AdminReportDetails from "../pages/admin/AdminReportDetails";
 import AdminWalletTransactions from "../pages/admin/AdminWalletTransactions";
 import AdminWalletTransactionsFilter from "../pages/admin/AdminWalletTransactionsFilter";
 
-// === WALLET (per PROFESSIONAL / COMPANY) ===
 import MyWallet from "../pages/wallet/MyWallet";
 import MyTransactions from "../pages/wallet/MyTransactions";
 
-// === GUARDIE ===
 import PrivateRoute from "./PrivateRoute";
 import RoleGuard from "./RoleGuard";
 

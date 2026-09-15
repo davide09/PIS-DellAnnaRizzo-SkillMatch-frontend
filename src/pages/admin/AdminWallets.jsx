@@ -1,5 +1,4 @@
 
-// src/pages/admin/AdminWallets.jsx
 
 import { useEffect, useState } from "react";
 import { getAllWallets, adminResetWallet, adminDeleteWallet } from "../../services/walletService";

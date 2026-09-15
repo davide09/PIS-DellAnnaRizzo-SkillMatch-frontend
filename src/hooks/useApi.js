@@ -1,5 +1,4 @@
 
-// src/hooks/useApi.js
 
 import { buildUrl } from "../api/gateway";
 import { getAuthToken } from "../utils/auth";

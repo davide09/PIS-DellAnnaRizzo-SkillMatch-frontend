@@ -1,5 +1,4 @@
 
-// src/pages/admin/AdminContracts.jsx
 
 import { useEffect, useState } from "react";
 import { getAllContracts } from "../../services/adminContractService";

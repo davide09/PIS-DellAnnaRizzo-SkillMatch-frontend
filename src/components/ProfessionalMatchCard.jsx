@@ -1,8 +1,6 @@
 
-// src/components/ProfessionalMatchCard.jsx
 
 export default function ProfessionalMatchCard({ item }) {
-  // item: { professional, score, skillsMatched, ... }
   const { professional, score, skillsMatched } = item;
 
   return (

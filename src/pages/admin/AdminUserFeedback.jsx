@@ -1,5 +1,4 @@
 
-// src/pages/admin/AdminUserFeedback.jsx
 
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";

@@ -1,5 +1,4 @@
 
-// src/pages/auth/Register.jsx
 
 import { useState } from "react";
 import { registerRequest } from "../../services/authService";
@@ -24,9 +23,7 @@ export default function Register() {
     e.preventDefault();
     setError("");
 
-    // --------------------------------------------------------
-    // VALIDAZIONE
-    // --------------------------------------------------------
+    
 
     const { name, email, password, role } = form;
 
@@ -36,13 +33,13 @@ export default function Register() {
       return;
     }
 
-    // NOME
+    
     if (!name.trim()) {
       setError("Inserisci il nome.");
       return;
     }
 
-    // EMAIL
+    
     if (!email.trim()) {
       setError("Inserisci l'email.");
       return;
@@ -52,7 +49,7 @@ export default function Register() {
       return;
     }
 
-    // PASSWORD
+    
     if (!password.trim()) {
       setError("Inserisci la password.");
       return;
@@ -62,15 +59,13 @@ export default function Register() {
       return;
     }
 
-    // ROLE / TIPOLOGIA
+    
     if (!role || role === "") {
       setError("Seleziona se sei un Professionista o un'Azienda.");
       return;
     }
 
-    // --------------------------------------------------------
-    // Se tutto ok → REGISTRAZIONE
-    // --------------------------------------------------------
+    
 
     try {
       await registerRequest(form);

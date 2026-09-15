@@ -1,5 +1,4 @@
 
-// src/components/admin/AdminNavbar.jsx
 
 import { useAuth } from "../hooks/useAuth";
 

@@ -1,5 +1,4 @@
 
-// src/pages/admin/AdminDashboard.jsx
 
 import { Link } from "react-router-dom";
 

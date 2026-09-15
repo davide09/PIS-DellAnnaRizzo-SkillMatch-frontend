@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { getUserReports, closeReport, closeAllReportsForUser } from "../../services/adminReportService";
 
 export default function AdminUserReports() {
-  const { id } = useParams();   // id dell’utente segnalato
+  const { id } = useParams();   // id dell’utente segnal
   const [reports, setReports] = useState([]);
 
   useEffect(() => {

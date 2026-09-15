@@ -1,5 +1,4 @@
 
-// src/pages/professional/ContractDetails.jsx
 
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
