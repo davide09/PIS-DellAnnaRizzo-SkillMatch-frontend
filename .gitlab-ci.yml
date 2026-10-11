@@ -1,5 +1,6 @@
 stages:
   - package
+  - deploy
 
 package-frontend:
   stage: package
@@ -16,3 +17,19 @@ package-frontend:
     - docker push "$CI_REGISTRY_IMAGE/frontend:latest"
   only:
     - main
+deploy-ec2:
+  stage: deploy
+  image: alpine:3.20
+  before_script:
+    - apk add --no-cache openssh-client
+    - chmod 600 "$SSH_PRIVATE_KEY"
+  script:
+    - |
+      ssh -i "$SSH_PRIVATE_KEY" -o StrictHostKeyChecking=no "$EC2_USER@$EC2_HOST" '
+        set -e
+        cd ~/PIS-DellAnnaRizzo-SkillMatch-backend
+        docker compose -f docker-compose.prod.yml pull frontend
+        docker compose -f docker-compose.prod.yml up -d frontend
+      '
+  only:
+    - main    
