@@ -9,7 +9,7 @@ const professionalLinks = [
   { to: "/professional/matching", label: "Matching" },
   { to: "/professional/contracts", label: "Contratti" },
   { to: "/professional/skills", label: "Skill" },
-  { to: "/professional/profile", label: "Profilo" },
+  { to: "/professional/profile", label: "Il mio Profilo" },
 ];
 
 export default function ProfessionalLayout() {
