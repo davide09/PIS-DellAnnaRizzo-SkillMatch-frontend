@@ -10,6 +10,7 @@ import {
   completeContract,
   payContract,
   getInvoiceById,
+  downloadInvoicePdf,
 } from "../../services/contractService";
 
 import FeedbackForm from "../../components/FeedbackForm";
@@ -56,40 +57,24 @@ export default function ContractDetails() {
     setInvoice(data);
   }
 
-  async function handleDownloadInvoicePdf() {
-    if (!contract.invoiceId) return;
+async function handleDownloadInvoicePdf() {
+  if (!contract.invoiceId) return;
 
-    try {
-      const res = await fetch(
-        `/api/contracts/invoices/${contract.invoiceId}/pdf`,
-        {
-          method: "GET",
-          mode: "cors",
-          headers: {
-            Accept: "application/pdf",
-          },
-        }
-      );
+  try {
+    const blob = await downloadInvoicePdf(contract.invoiceId);
+    const url = window.URL.createObjectURL(blob);
 
-      if (!res.ok) {
-        alert("Errore nel download della fattura.");
-        return;
-      }
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `fattura-${contract.invoiceId}.pdf`;
+    a.click();
 
-      const blob = await res.blob();
-      const url = window.URL.createObjectURL(blob);
-
-      const a = document.createElement("a");
-      a.href = url;
-      a.download = `fattura-${contract.invoiceId}.pdf`;
-      a.click();
-
-      window.URL.revokeObjectURL(url);
-    } catch (err) {
-      console.error(err);
-      alert("Errore nel download della fattura.");
-    }
+    window.URL.revokeObjectURL(url);
+  } catch (err) {
+    console.error(err);
+    alert("Errore nel download della fattura.");
   }
+}
 
   return (
     <div className="space-y-6 max-w-xl">

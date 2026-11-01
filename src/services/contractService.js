@@ -1,5 +1,7 @@
 
 import { apiPost, apiGet } from "../hooks/useApi";
+import { buildUrl } from "../api/gateway";
+import { getAuthToken } from "../utils/auth";
 
 // CREA PROPOSTA (con payload completo)
 export async function createProposal(payload) {
@@ -44,4 +46,19 @@ export async function payContract(id) {
 
 export function getInvoiceById(invoiceId) {
   return apiGet(`/api/contracts/invoices/${invoiceId}`);
+}
+export async function downloadInvoicePdf(invoiceId) {
+  const headers = { Accept: "application/pdf" };
+  const token = getAuthToken();
+  if (token) headers["Authorization"] = "Bearer " + token;
+
+  const res = await fetch(buildUrl(`/api/contracts/invoices/${invoiceId}/pdf`), {
+    method: "GET",
+    headers,
+  });
+
+  if (!res.ok) {
+    throw new Error(`Download fattura fallito (${res.status})`);
+  }
+  return res.blob();
 }
